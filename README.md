@@ -1,0 +1,1 @@
+This is a repository for angela yu's bootcamp on web development on [Udemy](https://www.udemy.com/course/the-complete-web-development-bootcamp/). I start the code from section 5 (where css just starts) and the basic barebone html stuff in the beginning is not included
