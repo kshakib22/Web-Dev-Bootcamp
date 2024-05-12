@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <title>Font Family</title>
   <style>
+    .jetbrains-mono {
+      font-family: "JetBrains Mono", monospace;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+    }
+
     #helvetica {
       font-family: Helvetica, sans-serif;
     }
@@ -33,9 +40,14 @@
       font-family: fantasy;
     }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+  <h1 class="jetbrains-mono">Font Family</h1>
   <p id="helvetica">Helvetica</p>
   <p id="arial">Arial</p>
   <p id="serif">Serif</p>
