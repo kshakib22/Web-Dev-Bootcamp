@@ -1,4 +1,4 @@
-entrypoint = "Section 5: Introduction to CSS/5.1. Adding CSS/index.html"
+entrypoint = "index.html"
 hidden = [".config"]
 modules = ["web:v2-20230623-0b7a606"]
 
