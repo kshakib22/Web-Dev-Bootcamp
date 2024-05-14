@@ -1,0 +1,35 @@
+body {
+  background: black;
+}
+h1{
+  size: 3rem;
+  text-transform: uppercase;
+}
+.divCenter{
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 200px;
+}
+.myImage{
+  border: 5px solid white;
+  width: 100%;
+}
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  text-align: center;
+}
+
+/* .libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic; */
+}
