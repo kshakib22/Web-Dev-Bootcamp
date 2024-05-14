@@ -1,25 +1,30 @@
 body {
   background: black;
 }
-h1{
+
+h1 {
   size: 3rem;
   text-transform: uppercase;
 }
-.divCenter{
+
+.divCenter {
   width: 50%;
   margin-left: 25%;
   margin-top: 200px;
+  text-align: center;
+  color: white;
 }
-.myImage{
+
+.myImage {
   border: 5px solid white;
   width: 100%;
 }
+
 .libre-baskerville-regular {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: normal;
   color: white;
-  text-align: center;
 }
 
 /* .libre-baskerville-bold {
