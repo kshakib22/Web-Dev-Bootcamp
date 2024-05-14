@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: 'Web-Dev-Bootcamp/Section 6: CSS Properties/6.0 CSS Colors/'
+          path: 'Section 6: CSS Properties/6.1 Font Properties'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
