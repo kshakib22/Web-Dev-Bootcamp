@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .container{
+      display: grid;
+      grid-template-columns: 320px 360px 50px;
+      grid-template-rows: 414px 295px 21px;
+      gap: 9px;
+      background-color: #000;
+      height: 748px;
+      width: 748px;
+    }
+    .container-2{
+      display: grid;
+      grid-template-rows: 130px 195px;
+      /* gap: 20px; */
+    }
+    .container-3{
+      display: grid;
+      grid-template-columns: 198px 153px;
+      gap: 9px;
+    }
+    .white {
+      background-color: #F0F1EC;
+    }
+    .white2{
+      background-color: #F0F1EC;
+      border-top: 10px solid #000;
+    }
+    .top-right{
+      grid-column: span 2;
+    }
+    .blue-white{
+      display: grid;
+      grid-template-columns: 20px 20px;
+    }
+
+    .red{
+      background-color: #E72F24;
+      height: 414px;
+    }
+    .yellow{
+      background-color: #F9D01E;
+    }
+    .blue{
+      background-color: #004592;
+      border-bottom: 10px solid #000;
+    }
+    .black{
+      background-color: #232629;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class = "red"></div>
+    <div class = "white top-right"></div>
+    <div class="white"></div>
+    <div class="white"></div>
+    <div class = "container-2">
+      <div class="blue"></div>
+      <div class="white2"></div>
+    </div>
+    <div class="white"></div>
+    <div class="container-3">
+      <div class="yellow"></div>
+      <div class="black"></div> 
+    </div>
+  </div>
+
+</body>
+
+</html>
