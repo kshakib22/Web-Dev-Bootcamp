@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: 'Section 11 - Bootstrap/11.2 Bootstrap Components'
+          path: 'Section 11 - Bootstrap/11.3 TinDog Project'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
