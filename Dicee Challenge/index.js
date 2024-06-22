@@ -10,7 +10,7 @@ function diceRoll() {
 function randomPath() {
   let path = "images/dice";
   const num = diceRoll();
-  path = path + num + ".png";
+  path = path + num.toString() + ".png";
   return { path: path, value: num };
 }
 
