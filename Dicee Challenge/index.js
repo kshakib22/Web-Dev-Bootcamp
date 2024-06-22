@@ -8,7 +8,7 @@ function diceRoll() {
 }
 // dynamically change path
 function randomPath() {
-  let path = "/images/dice";
+  let path = "images/dice";
   const num = diceRoll();
   path = path + num + ".png";
   return { path: path, value: num };
