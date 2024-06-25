@@ -42,14 +42,28 @@ function makeSound(key) {
       break;
   }
 }
+
+// function to animate the buttons when key pressed
+
+function buttonAnimation(key) {
+  // takes key, uses it as a className
+  let button = document.querySelector("." + key);
+  button.classList.add("pressed");
+
+  setTimeout(function () {
+    button.classList.remove("pressed");
+  }, 131);
+}
 // Loop to handle clicks that correspond to a sound
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener("click", function () {
     let buttonHtml = this.innerHTML;
     makeSound(buttonHtml);
+    buttonAnimation(buttonHtml);
   });
 }
 
 document.addEventListener("keydown", function (event) {
   makeSound(event.key);
+  buttonAnimation(event.key);
 });
