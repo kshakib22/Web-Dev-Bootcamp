@@ -1,4 +1,28 @@
-.big-title {
+.bad-title {
   font-size: 5rem;
+  color: yellow;
+}
+
+.big-title {
+  font-size: 6rem;
   color: hotpink;
+}
+
+.heading {
+  font-size: 6rem;
+  color: blueviolet;
+  text-align: center;
+}
+
+.libre {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
