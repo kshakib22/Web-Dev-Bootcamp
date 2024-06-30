@@ -1,8 +1,13 @@
 let buttonColors = ["red", "green", "blue", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
+
+//   $(this).fadeOut(170).fadeIn(170);
+
 function nextSequence() {
-  return Math.floor(Math.random() * 4);
+  var randomIndex = Math.floor(Math.random() * 4);
+  let randomChosenColor = buttonColors[randomIndex];
+  gamePattern.push(randomChosenColor);
 }
 
 function playSound(name) {
@@ -18,22 +23,11 @@ function animatePress(currentColor) {
     $(selector).removeClass("pressed");
   }, 113);
 }
-let randomChosenColor = buttonColors[nextSequence()];
-gamePattern.push(randomChosenColor);
-
-gamePattern;
-let colorID = gamePattern[0];
-colorID;
-
-$("#" + colorID).click(function () {
-  playSound(colorID);
-  animatePress(colorID);
-
-  //   $(this).fadeOut(170).fadeIn(170);
-});
 
 $(".btn").click(function (event) {
   userChosenColor = event.target.id;
   userClickedPattern.push(userChosenColor);
+  playSound(userChosenColor);
+  animatePress(userChosenColor);
   console.log(userClickedPattern);
 });
