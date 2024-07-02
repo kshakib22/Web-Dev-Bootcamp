@@ -28,7 +28,7 @@ function checkAnswer(index) {
   if (userClickedPattern[index] == gamePattern[index]) {
     if (userClickedPattern.length == gamePattern.length) {
       userClickedPattern = [];
-      setTimeout(nextSequence, 400);
+      nextSequence();
     }
   } else {
     gameOver();
@@ -52,7 +52,9 @@ function nextSequence() {
   var randomIndex = Math.floor(Math.random() * 4);
   let randomChosenColor = buttonColors[randomIndex];
   gamePattern.push(randomChosenColor);
-  setTimeout(fade(randomChosenColor), 400);
+  setTimeout(function () {
+    fade(randomChosenColor);
+  }, 800);
 }
 
 function fade(color) {
