@@ -3,9 +3,10 @@ let gamePattern = [];
 let userClickedPattern = [];
 var level = 0;
 var activeGame = false;
+var counter = 0;
 
-function onClick() {
-  $(".btn").click(function (event) {
+$(".btn").click(function (event) {
+  if (activeGame) {
     userChosenColor = event.target.id;
     userClickedPattern.push(userChosenColor);
     playSound(userChosenColor);
@@ -14,28 +15,29 @@ function onClick() {
     console.log("Length of user seq is " + userClickedPattern.length);
     let index = userClickedPattern.length - 1;
     checkAnswer(index);
-  });
-}
+  }
+});
 
 function startOver() {
   level = 0;
   userClickedPattern = [];
   gamePattern = [];
+  activeGame = false;
+  counter = 0;
 }
 
 function checkAnswer(index) {
   console.log(userClickedPattern);
   console.log(gamePattern);
   if (userClickedPattern[index] == gamePattern[index]) {
-    if (userClickedPattern.toString() == gamePattern.toString()) {
-      console.log("Correct");
-      setTimeout(nextSequence, 500);
+    console.log("Correct");
+    if (userClickedPattern.length == gamePattern.length) {
+      setTimeout(nextSequence, 400);
     }
   } else {
     console.log("Wrong");
     gameOver();
     startOver();
-    activeGame = false;
   }
 }
 
@@ -50,12 +52,17 @@ function gameOver() {
 }
 
 function nextSequence() {
+  console.log("Entered nextSeq");
   level += 1;
   $("h1").text("Level " + level);
   var randomIndex = Math.floor(Math.random() * 4);
   let randomChosenColor = buttonColors[randomIndex];
   gamePattern.push(randomChosenColor);
-  $("#" + randomChosenColor)
+  setTimeout(fade(randomChosenColor), 400);
+}
+
+function fade(color) {
+  $("#" + color)
     .fadeOut(200)
     .fadeIn(200);
 }
@@ -74,15 +81,10 @@ function animatePress(currentColor) {
   }, 113);
 }
 
-function nextLevel() {
-  $(document).keydown(function (event) {
+console.log("Start Level");
+$(document).keydown(function (event) {
+  if (!activeGame) {
+    activeGame = true;
     nextSequence();
-  });
-}
-
-function masterGame() {
-  nextLevel();
-  onClick();
-}
-
-masterGame();
+  }
+});
