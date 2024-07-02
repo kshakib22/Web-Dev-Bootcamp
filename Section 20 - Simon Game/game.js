@@ -76,7 +76,7 @@ function animatePress(currentColor) {
 }
 
 // Game starts here
-$(document).keydown(function (event) {
+$(document).keypress(function (event) {
   if (!activeGame) {
     activeGame = true;
     nextSequence();
