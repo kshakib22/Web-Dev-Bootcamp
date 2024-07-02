@@ -3,7 +3,6 @@ let gamePattern = [];
 let userClickedPattern = [];
 var level = 0;
 var activeGame = false;
-var counter = 0;
 
 $(".btn").click(function (event) {
   if (activeGame) {
@@ -21,7 +20,6 @@ function startOver() {
   userClickedPattern = [];
   gamePattern = [];
   activeGame = false;
-  counter = 0;
 }
 
 function checkAnswer(index) {
@@ -38,12 +36,12 @@ function checkAnswer(index) {
 
 function gameOver() {
   $("body").addClass("game-over");
-  $("h1").text("Game Over, press any key to restart");
+  $("h1").text("Game Over! Press Any Key (or Tap) to Restart");
   let audio = new Audio("sounds/wrong.mp3");
   setTimeout(function () {
     $("body").removeClass("game-over");
     audio.play();
-  }, 231);
+  }, 313);
 }
 
 function nextSequence() {
@@ -83,4 +81,13 @@ $(document).keydown(function (event) {
     activeGame = true;
     nextSequence();
   }
+});
+
+// Starts here on touch devices (tap to start)
+$(document).on("touchstart", function (event) {
+  if (!activeGame) {
+    activeGame = true;
+    nextSequence();
+  }
+  console.log("Touch detected!");
 });
