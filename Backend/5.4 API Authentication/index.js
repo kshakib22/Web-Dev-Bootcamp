@@ -8,7 +8,7 @@ const API_URL = "https://secrets-api.appbrewery.com/";
 //TODO 1: Fill in your values for the 3 types of auth.
 const yourUsername = "alohotranks";
 const yourPassword = "alohotranks";
-const yourAPIKey = "b7ca5c43-707b-4e9c-a181-5edff3fedf13";
+const yourAPIKey = "b5e34859-1be9-4deb-94d5-85cddb4280b4";
 const yourBearerToken = "3e57c94d-f4e7-462a-811c-f1055a268188";
 
 app.get("/", (req, res) => {
@@ -53,7 +53,7 @@ app.get("/apiKey", async (req, res) => {
   //HINT: You need to provide a query parameter of apiKey in the request.
   try {
     const response = await axios.get(API_URL + "filter", {
-      headers: { score: "5", apiKey: yourAPIKey },
+      params: { score: 5, apiKey: yourAPIKey },
     });
     res.render("index.ejs", { content: JSON.stringify(response.data) });
   } catch (error) {
@@ -61,7 +61,7 @@ app.get("/apiKey", async (req, res) => {
   }
 });
 
-app.get("/bearerToken", (req, res) => {
+app.get("/bearerToken", async (req, res) => {
   //TODO 5: Write your code here to hit up the /secrets/{id} endpoint
   //and get the secret with id of 42
   //HINT: This is how you can use axios to do bearer token auth:
