@@ -5,7 +5,6 @@ const app = express();
 const port = 3000;
 const API_URL = "https://secrets-api.appbrewery.com/";
 
-//TODO 1: Fill in your values for the 3 types of auth.
 const yourUsername = "alohotranks";
 const yourPassword = "alohotranks";
 const yourAPIKey = "b5e34859-1be9-4deb-94d5-85cddb4280b4";
@@ -25,18 +24,6 @@ app.get("/noAuth", async (req, res) => {
 });
 
 app.get("/basicAuth", async (req, res) => {
-  //TODO 3: Write your code here to hit up the /all endpoint
-  //Specify that you only want the secrets from page 2
-  //HINT: This is how you can use axios to do basic auth:
-  // https://stackoverflow.com/a/74632908
-  /*
-   axios.get(URL, {
-      auth: {
-        username: "abc",
-        password: "123",
-      },
-    });
-  */
   try {
     const response = await axios.get(API_URL + "all?page=2", {
       auth: { username: yourUsername, password: yourPassword },
@@ -48,9 +35,6 @@ app.get("/basicAuth", async (req, res) => {
 });
 
 app.get("/apiKey", async (req, res) => {
-  //TODO 4: Write your code here to hit up the /filter endpoint
-  //Filter for all secrets with an embarassment score of 5 or greater
-  //HINT: You need to provide a query parameter of apiKey in the request.
   try {
     const response = await axios.get(API_URL + "filter", {
       params: { score: 5, apiKey: yourAPIKey },
