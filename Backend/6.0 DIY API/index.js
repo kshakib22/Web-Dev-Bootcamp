@@ -30,9 +30,18 @@ app.get("/jokes/:id", (req, res) => {
 });
 
 //3. GET a jokes by filtering on the joke type
-
+app.get("/filter", (req, res) => {
+  const type = req.query.type;
+  const matchedJokes = jokes.filter((joke) => joke.jokeType == type);
+  res.json(matchedJokes);
+});
 //4. POST a new joke
-
+app.post("/jokes", (req, res) => {
+  const joke = req.body.text;
+  const type = req.body.type;
+  const data = { joke, type };
+  res.json(data);
+});
 //5. PUT a joke
 
 //6. PATCH a joke
