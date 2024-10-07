@@ -75,15 +75,23 @@ app.delete("/jokes/:id", (req, res) => {
     jokes = jokes.splice(index, 1);
     res.status(200);
   } else {
-    res
-      .status(400)
-      .json({
-        error: `Joke with id ${id} not found. Joke couldn't be deleted`,
-      });
+    res.status(400).json({
+      error: `Joke with id ${id} not found. Joke couldn't be deleted`,
+    });
   }
 });
 //8. DELETE All jokes
-
+app.delete("/all", (req, res) => {
+  const userKey = req.query.key;
+  if (userKey == masterKey) {
+    jokes = [];
+    res.sendStatus(200);
+  } else {
+    res.status(400).json({
+      error: `Not authorized`,
+    });
+  }
+});
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
 });
